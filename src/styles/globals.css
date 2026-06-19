@@ -1,32 +1,108 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root{
+  --bg:#0a0a0a;
+  --text:#ffffff;
+  --secondary:#a1a1aa;
+
+  --card:rgba(255,255,255,.05);
+  --card-border:rgba(255,255,255,.08);
+
+  --dock-bg:rgba(255,255,255,.08);
+  --dock-border:rgba(255,255,255,.10);
+  --dock-hover:rgba(255,255,255,.08);
+  --dock-active:rgba(255,255,255,.12);
+
+  --navbar-bg:rgba(10,10,10,.35);
+
+  --primary:#7c3aed;
+  --accent:#06b6d4;
+
+  --shadow:0 10px 30px rgba(0,0,0,.25);
 }
 
-html {
-  scroll-behavior: smooth;
+.light-theme{
+  --bg:#f8fafc;
+  --text:#111827;
+  --secondary:#6b7280;
+
+  --card:rgba(255,255,255,.75);
+  --card-border:rgba(0,0,0,.06);
+
+  --dock-bg:rgba(255,255,255,.75);
+  --dock-border:rgba(0,0,0,.08);
+  --dock-hover:rgba(0,0,0,.05);
+  --dock-active:rgba(0,0,0,.08);
+
+  --navbar-bg:rgba(255,255,255,.70);
+
+  --shadow:0 15px 40px rgba(0,0,0,.08);
 }
 
-body {
-  background: #0a0a0a;
-  color: white;
-  font-family: "Inter", sans-serif;
-  overflow-x: hidden;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+html{
+  scroll-behavior:smooth;
 }
 
-ul {
-  list-style: none;
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Inter",sans-serif;
+  overflow-x:hidden;
+
+  transition:
+    background .3s ease,
+    color .3s ease;
 }
 
-main {
-  min-height: 100vh;
-  padding: 2rem 5%;
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+ul{
+  list-style:none;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+button{
+  font-family:inherit;
+  cursor:pointer;
+}
+
+input,
+textarea{
+  font-family:inherit;
+}
+
+main{
+  min-height:100vh;
+}
+
+/* Beautiful Scrollbar */
+
+::-webkit-scrollbar{
+  width:8px;
+}
+
+::-webkit-scrollbar-track{
+  background:transparent;
+}
+
+::-webkit-scrollbar-thumb{
+  background:linear-gradient(
+    180deg,
+    var(--primary),
+    var(--accent)
+  );
+  border-radius:20px;
 }

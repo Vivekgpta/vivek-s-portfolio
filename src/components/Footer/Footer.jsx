@@ -1,61 +1,111 @@
 import { Link } from "react-router-dom";
 import "./Footer.css";
-import { FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+
+import {
+  FaInstagram,
+  FaLinkedin,
+  FaWhatsapp,
+  FaArrowUp,
+} from "react-icons/fa";
 
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-container">
+
+      <div className="footer-top">
+
         <div className="footer-brand">
-          <h2>Vivek Kumar</h2>
+
+          <h2>ZENITH STUDIO</h2>
 
           <p>
-            Freelance Creative Developer & Artist. Creating modern websites,
-            magazine designs, and hyper-realistic sketch portraits.
+            Crafting modern digital experiences,
+            premium magazine designs and artistic
+            sketch portraits that leave a lasting impact.
           </p>
+
         </div>
 
         <div className="footer-links">
-          <h3>Quick Links</h3>
 
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/services">Services</Link>
-            </li>
-            <li>
-              <Link to="/work">Work</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-          </ul>
+          <h4>Navigation</h4>
+
+          <Link to="/">Home</Link>
+          <Link to="/services">Services</Link>
+          <Link to="/work">Work</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
+
+        </div>
+
+        <div className="footer-services">
+
+          <h4>Services</h4>
+
+          <p>Website Development</p>
+          <p>Magazine Design</p>
+          <p>Sketch Portraits</p>
+
         </div>
 
         <div className="footer-social">
-          <h3>Connect</h3>
-          <a href="#">
-            <FaInstagram /> Instagram
+
+          <h4>Connect</h4>
+
+          <a
+            href="https://instagram.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaInstagram />
+            Instagram
           </a>
-          <a href="#">
+
+          <a
+            href="https://linkedin.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaLinkedin />
             LinkedIn
           </a>
-          <a href="#">
+
+          <a
+            href="https://wa.me/919142457610"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaWhatsapp />
             WhatsApp
           </a>
+
         </div>
+
       </div>
 
+      <div className="footer-divider"></div>
+
       <div className="footer-bottom">
-        © {new Date().getFullYear()} Vivek Kumar. All Rights Reserved.
+
+        <p>
+          © {new Date().getFullYear()} Zenith Studio.
+          All Rights Reserved.
+        </p>
+
+        <button
+          className="scroll-top"
+          onClick={() =>
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            })
+          }
+        >
+          <FaArrowUp />
+        </button>
+
       </div>
+
     </footer>
   );
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -8,23 +9,32 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
+
       <div className="logo">
-        Vivek Kumar
+        Zenith Studio
       </div>
 
-      <div className="nav-links">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/services">Services</NavLink>
-        <NavLink to="/work">Work</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
-      </div>
+      {/* Right Side */}
+      <div className="navbar-right">
 
-      <div
-        className="menu-icon"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        {menuOpen ? <FaTimes /> : <FaBars />}
+        <ThemeToggle />
+
+        <a
+          href="https://wa.me/919142457610"
+          target="_blank"
+          rel="noreferrer"
+          className="hire-btn"
+        >
+          Hire Me
+        </a>
+
+        <div
+          className="menu-icon"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </div>
+
       </div>
 
       <div className={`mobile-menu ${menuOpen ? "active" : ""}`}>
@@ -48,6 +58,7 @@ export default function Navbar() {
           Contact
         </NavLink>
       </div>
+
     </nav>
   );
 }

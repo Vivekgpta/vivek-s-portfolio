@@ -1,42 +1,138 @@
 .why {
-  padding: 100px 5%;
+  padding: 12px 5%;
 }
 
-.why h2 {
+.why-header {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 50px;
+
+  max-width: 800px;
+
+  margin: auto;
+
+  margin-bottom: 70px;
+}
+
+.why-header span {
+  color: #06b6d4;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+}
+
+.why-header h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+
+  margin: 15px 0;
+}
+
+.why-header p {
+  color: #a1a1aa;
+
+  line-height: 1.8;
 }
 
 .why-grid {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 25px;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 30px;
 }
 
 .why-card {
-  padding: 30px;
-  border-radius: 20px;
+  position: relative;
 
-  background: rgba(255,255,255,.05);
+  padding: 35px;
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,.08),
+      rgba(255,255,255,.03)
+    );
+
   border: 1px solid rgba(255,255,255,.08);
 
-  transition: .3s;
+  backdrop-filter: blur(25px);
+
+  transition: .4s ease;
+
+  overflow: hidden;
+}
+
+.why-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  background: #7c3aed;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  opacity: .12;
+
+  top: -90px;
+  right: -90px;
 }
 
 .why-card:hover {
-  transform: translateY(-10px);
+  transform:
+    translateY(-12px)
+    scale(1.02);
+
+  box-shadow:
+    0 25px 60px rgba(124,58,237,.15);
+}
+
+.why-icon {
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #06b6d4
+    );
+
+  font-size: 1.4rem;
+
+  margin-bottom: 25px;
 }
 
 .why-card h3 {
+  font-size: 1.3rem;
+
   margin-bottom: 15px;
 }
 
 .why-card p {
   color: #a1a1aa;
+
+  line-height: 1.8;
 }
 
-@media(max-width:768px) {
+@media (max-width: 1200px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
   .why-grid {
     grid-template-columns: 1fr;
   }

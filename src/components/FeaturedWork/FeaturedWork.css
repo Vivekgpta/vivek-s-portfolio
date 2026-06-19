@@ -1,25 +1,29 @@
 .featured {
-  padding: 100px 5%;
+  padding: 120px 5%;
 }
 
-.section-title {
+.section-header {
   text-align: center;
-  font-size: 2.5rem;
   margin-bottom: 50px;
 }
 
-.featured-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+.section-title {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.section-header p {
+  color: #a1a1aa;
 }
 
 .project-card {
   position: relative;
+
   overflow: hidden;
 
-  border-radius: 20px;
-  height: 350px;
+  border-radius: 25px;
+
+  height: 450px;
 
   cursor: pointer;
 }
@@ -27,9 +31,10 @@
 .project-card img {
   width: 100%;
   height: 100%;
+
   object-fit: cover;
 
-  transition: .5s;
+  transition: .6s;
 }
 
 .project-card:hover img {
@@ -40,50 +45,77 @@
   position: absolute;
   inset: 0;
 
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.85),
+    transparent
+  );
+
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 
-  padding: 25px;
-
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,.9),
-    rgba(0,0,0,.2)
-  );
-
-  transition: .3s;
+  padding: 30px;
 }
 
 .overlay h3 {
+  font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
 .overlay p {
   color: #d4d4d8;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .overlay button {
   width: fit-content;
 
-  padding: 10px 18px;
-
   border: none;
-  border-radius: 10px;
+
+  padding: 12px 22px;
+
+  border-radius: 999px;
+
+  background: white;
+  color: black;
+
+  cursor: pointer;
+
+  font-weight: 600;
+}
+
+.explore-btn-wrap {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.explore-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 16px 28px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-weight: 600;
 
   color: white;
-  cursor: pointer;
 
   background: linear-gradient(
     90deg,
     #7c3aed,
     #06b6d4
   );
+
+  transition: .3s;
 }
 
-@media(max-width:768px){
-  .featured-grid{
-    grid-template-columns:1fr;
-  }
+.explore-btn:hover {
+  transform: translateY(-5px);
 }

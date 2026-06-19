@@ -1,35 +1,66 @@
 import "./Hero.css";
 import { Link } from "react-router-dom";
-
-
+import heroImage from "../../assets/img1.jpg";
 
 export default function Hero() {
   return (
     <section className="hero">
-      <div className="hero-content">
-        <span className="hero-badge">
-          Freelance Creative Developer & Artist
-        </span>
 
-        <h1>
-          Hi, I'm <span>Vivek Kumar</span>
-        </h1>
+      <div className="hero-overlay"></div>
 
-        <p>
-          I build modern websites and create personalized artistic
-          experiences that help businesses and individuals stand out.
-        </p>
+      <div className="hero-container">
 
-        <div className="hero-buttons">
-          <button  className="primary-btn">
-           <Link to="/services">View My Work</Link> 
-          </button>
+        <div className="hero-left">
 
-          <button className="secondary-btn">
-            Hire Me
-          </button>
+          <span className="hero-badge">
+            Creative Developer & Artist
+          </span>
+
+          <h1>
+            Building
+            <span> Digital Experiences </span>
+            That Drive Growth
+          </h1>
+
+          <p>
+            I help businesses establish a strong online presence
+            through modern websites, creative design, and premium
+            digital experiences.
+          </p>
+
+          <div className="hero-buttons">
+
+            <Link
+              to="/work"
+              className="primary-btn"
+            >
+              View Work
+            </Link>
+
+            <Link
+              to="/contact"
+              className="secondary-btn"
+            >
+              Hire Me
+            </Link>
+
+          </div>
+
         </div>
+
+        <div className="hero-right">
+
+          <img
+            src={heroImage}
+            alt="Vivek Kumar"
+          />
+
+        </div>
+
       </div>
+
+     
+
     </section>
   );
 }

@@ -1,0 +1,116 @@
+.dock {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 14px 22px;
+
+  border-radius: 24px;
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  background: var(--dock-bg);
+
+  border: 1px solid var(--dock-border);
+
+  box-shadow:
+    0 8px 32px rgba(0,0,0,.2);
+
+  z-index: 9999;
+
+  transition:
+    transform .4s ease,
+    opacity .4s ease;
+}
+
+.dock.show{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
+
+.dock.hide{
+  opacity:0;
+  pointer-events:none;
+  transform:translateX(-50%) translateY(120px);
+}
+
+.dock a{
+  width:52px;
+  height:52px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:14px;
+
+  color:var(--text);
+
+  transition:all .3s ease;
+}
+
+.dock a svg{
+  font-size:1.35rem;
+}
+
+.dock a:hover{
+  transform:
+    translateY(-10px)
+    scale(1.25);
+
+  background:var(--dock-hover);
+}
+
+.dock a.active{
+  background:var(--dock-active);
+  color:var(--primary);
+
+  position:relative;
+}
+
+.dock a.active::after{
+  content:"";
+
+  position:absolute;
+
+  bottom:6px;
+
+  width:6px;
+  height:6px;
+
+  border-radius:50%;
+
+  background:var(--primary);
+}
+
+/* Light Theme Premium Effect */
+
+.light-theme .dock{
+  box-shadow:
+    0 15px 40px rgba(0,0,0,.08);
+}
+
+@media(max-width:768px){
+
+  .dock{
+    gap:10px;
+    padding:12px 16px;
+    bottom:15px;
+  }
+
+  .dock a{
+    width:45px;
+    height:45px;
+  }
+
+  .dock a svg{
+    font-size:1.1rem;
+  }
+}
